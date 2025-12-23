@@ -7,7 +7,7 @@
   align-items: center;
   gap: $space-lg;
 
-  /* Desktop default */
+  /* Desktop */
   flex-direction: row;
   text-align: left;
 
@@ -18,32 +18,45 @@
   }
 }
 
-
 .content {
   flex: 1;
 
   h1 {
-    font-size: $font-size-xl;
-    font-weight: 700;
-    line-height: 1.1;
-    margin-bottom: $space-sm;
-    color: $color-text-primary;
+    margin-bottom: $space-md;
+    line-height: 1.15;
   }
 
   p {
-    font-size: $font-size-md;
+    font-size: $font-size-sm;
+    line-height: 1.7;
+    max-width: 380px;
     margin-bottom: $space-md;
-    color: $color-text-secondary;
+    color: $color-text-primary;
   }
+}
+
+/* ⬇️ BAŞLIKLAR ROOT SEVİYE */
+.titleDark {
+  font-size:$font-size-xl; // ≈ 52px
+  font-weight: 700;
+  color: #354e57;
+  display: block;
+}
+
+.titleGreen {
+  font-size:$font-size-xl;
+  font-weight: 700;
+  color: #87c241;
+  display: block;
 }
 
 .cta {
   font-size: $font-size-md;
   font-weight: $font-weight-bold;
-  padding: 0.875rem 2rem;
+  padding: 0.675rem 1.75rem;
   border-radius: 0.5rem;
-  color :$color-primary;
-  border:3px solid $color-primary;
+  color: $color-primary;
+  border: 3px solid $color-primary;
   background-color: #fff;
   cursor: pointer;
 
@@ -57,23 +70,10 @@
   position: relative;
   flex: 1;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: center;
 
-
-  .titleDark {
-  font-size: 3rem; // 48px
-  font-weight: 700;
-  color: #354e57;
-}
-
-.titleGreen {
-  font-size: 3rem;
-  font-weight: 700;
-  color: #87c241;
-}
-
-  // Arka plandaki daire
+  /* Arka plan dairesi */
   &::before {
     content: "";
     position: absolute;

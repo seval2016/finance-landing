@@ -18,8 +18,8 @@ const Header = () => {
             <Image
               src="/logos/logo.svg"
               alt="EasyExchange Logo"
-              width={260}
-              height={60}
+              width={280}
+              height={80}
               priority
             />
           </div>

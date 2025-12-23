@@ -9,7 +9,6 @@ const Hero = () => {
         <div className={styles.content}>
           <h1>
             <span className={styles.titleDark}>Exchange Your Money</span>
-            <br />
             <span className={styles.titleGreen}>
               Easily, Quickly And <br /> Securely
             </span>
