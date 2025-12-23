@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <>
       <header className={styles.header}>
-        <div className={styles.container}>
+        <div className={styles.headerContainer}>
           {/* LOGO */}
           <div className={styles.logo}>
             <Image
@@ -25,14 +25,12 @@ const Header = () => {
           </div>
 
           {/* LOGIN */}
-          <nav className={styles.nav}>
             <button
               className={styles.login}
               onClick={() => setIsOpen(true)}
             >
               LOGIN
             </button>
-          </nav>
         </div>
       </header>
 

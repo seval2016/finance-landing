@@ -13,6 +13,7 @@
   color: $color-text-primary;
 }
 
+
 .control {
   height: 48px;
   width: 100%;
@@ -30,14 +31,15 @@
   transform: rotate(180deg);
 }
 
+
 .value {
   display: flex;
   align-items: center;
   gap: $space-xs;
-  font-size: $font-size-sm;
-  color: $color-text-primary;
-  font-weight: $font-weight-semi-bold;
-  font-family: var(--font-inter);
+   font-size: $font-size-sm;
+    color: $color-text-primary;
+    font-weight: $font-weight-semi-bold;
+    font-family: var(--font-inter);
 }
 
 .arrow {
@@ -65,6 +67,8 @@
   transform: rotate(-45deg);
   right: 0;
 }
+
+
 
 .list {
   position: absolute;

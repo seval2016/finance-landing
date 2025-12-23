@@ -1,16 +1,20 @@
-import styles from "./Hero.module.scss";
 import Image from "next/image";
+import styles from "./Hero.module.scss";
 
 const Hero = () => {
   return (
     <section className={styles.hero}>
-      <div className={styles.container}>
-        {/* LEFT */}
+      <div className={styles.heroContainer}>
+        {/* CONTENT */}
         <div className={styles.content}>
           <h1>
-            <span className={styles.titleDark}>Exchange Your Money</span>
+            <span className={styles.titleDark}>
+              Exchange Your Money
+            </span>
+
             <span className={styles.titleGreen}>
-              Easily, Quickly And <br /> Securely
+              Easily, Quickly And <br />
+              Securely
             </span>
           </h1>
 
@@ -20,15 +24,20 @@ const Hero = () => {
             delivery and payment options.
           </p>
 
-          <button className={styles.cta}>Exchange Fund</button>
+          <button
+            type="button"
+            className={styles.cta}
+            aria-label="Exchange funds"
+          >
+            Exchange Fund
+          </button>
         </div>
 
-        {/* RIGHT */}
+        {/* IMAGE */}
         <div className={styles.imageWrapper}>
-          <div className={styles.circle} />
           <Image
             src="/hero/hero.svg"
-            alt="Exchange illustration"
+            alt="Currency exchange illustration"
             width={460}
             height={460}
             priority

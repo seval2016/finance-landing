@@ -3,34 +3,50 @@
 
 .header {
   width: 100%;
-  padding-top: $space-lg;
+  padding-top: $space-md;
+
+  @include respond-md {
+    padding-top: $space-sm;
+  }
 }
 
-.container {
+.headerContainer {
   @include container;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 80px;
+
+  @include respond-md {
+    height: 64px;
+  }
 }
 
 .logo {
   display: flex;
   align-items: center;
-}
 
-.nav {
-  display: flex;
-  align-items: center;
+  img {
+    width: 280px;
+    height: auto;
+
+    @include respond-md {
+      width: 200px;
+    }
+
+    @include respond-sm {
+      width: 160px;
+    }
+  }
 }
 
 .login {
   font-size: $font-size-xs;
   font-weight: $font-weight-semi-bold;
   color: $color-text-primary;
-  text-decoration: none;
-  border: none;
   background: none;
+  border: none;
+  cursor: pointer;
 
   &:hover {
     color: $color-primary;

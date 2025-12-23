@@ -13,6 +13,7 @@ type Props = {
 const CurrencySelect = ({ label, value, options, onChange }: Props) => {
   const [open, setOpen] = useState(false);
 
+
   return (
     <div className={styles.wrapper}>
       <label className={styles.label}>{label}</label>

@@ -1,23 +1,33 @@
 @use "@/styles/variables" as *;
 @use "@/styles/mixins" as *;
 
-.container {
+/* ROOT */
+.hero {
+  padding: $space-lg 0;
+
+  @include respond-md {
+    padding: $space-md 0;
+  }
+}
+
+/* CONTAINER */
+.heroContainer {
   @include container;
   display: flex;
   align-items: center;
   gap: $space-lg;
 
-  /* Desktop */
   flex-direction: row;
   text-align: left;
 
-  /* Tablet & mobile */
   @include respond-md {
     flex-direction: column;
     text-align: center;
+    gap: $space-md;
   }
 }
 
+/* CONTENT */
 .content {
   flex: 1;
 
@@ -32,24 +42,50 @@
     max-width: 380px;
     margin-bottom: $space-md;
     color: $color-text-primary;
+
+    @include respond-md {
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  @include respond-md {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
-/* ⬇️ BAŞLIKLAR ROOT SEVİYE */
-.titleDark {
-  font-size:$font-size-xl; // ≈ 52px
-  font-weight: 700;
-  color: #354e57;
+/* TITLES */
+.titleDark,
+.titleGreen {
   display: block;
+  font-weight: 700;
+  font-size: $font-size-xl;
+
+  @include respond-lg {
+    font-size: 40px;
+  }
+
+  @include respond-md {
+    font-size: 32px;
+  }
+
+  @include respond-sm {
+    font-size: 28px;
+  }
+}
+
+.titleDark {
+  color: $color-text-primary;
 }
 
 .titleGreen {
-  font-size:$font-size-xl;
-  font-weight: 700;
-  color: #87c241;
-  display: block;
+  color: $color-primary;
 }
 
+/* CTA */
 .cta {
   font-size: $font-size-md;
   font-weight: $font-weight-bold;
@@ -66,6 +102,7 @@
   }
 }
 
+/* IMAGE */
 .imageWrapper {
   position: relative;
   flex: 1;
@@ -73,7 +110,6 @@
   justify-content: flex-end;
   align-items: center;
 
-  /* Arka plan dairesi */
   &::before {
     content: "";
     position: absolute;
@@ -92,9 +128,18 @@
   }
 
   @include respond-md {
+    justify-content: center;
+
     &::before {
-      width: 35rem;
-      height: 35rem;
+      width: 26rem;
+      height: 26rem;
+    }
+  }
+
+  @include respond-sm {
+    &::before {
+      width: 20rem;
+      height: 20rem;
     }
   }
 }

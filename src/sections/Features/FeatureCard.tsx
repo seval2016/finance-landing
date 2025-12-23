@@ -11,7 +11,13 @@ const FeatureCard = ({ icon, title, description }: FeatureCardProps) => {
   return (
     <div className={styles.card}>
       <div className={styles.iconWrapper}>
-        <Image src={icon} alt={title} width={230} height={230} />
+        <Image
+          src={icon}
+          alt={title}
+          width={220}
+          height={220}
+          priority={false}
+        />
       </div>
 
       <h3>{title}</h3>
