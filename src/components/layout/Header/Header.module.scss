@@ -3,7 +3,7 @@
 
 .header {
   width: 100%;
-    padding-top: $space-lg;
+  padding-top: $space-lg;
 }
 
 .container {
@@ -25,11 +25,12 @@
 }
 
 .login {
-  font-size: 14px;
-  font-weight: 500;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semi-bold;
   color: $color-text-primary;
   text-decoration: none;
-  letter-spacing: 0.5px;
+  border: none;
+  background: none;
 
   &:hover {
     color: $color-primary;
