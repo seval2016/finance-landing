@@ -1,0 +1,100 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.container {
+  @include container;
+  display: flex;
+  align-items: center;
+  gap: $space-lg;
+
+  /* Desktop default */
+  flex-direction: row;
+  text-align: left;
+
+  /* Tablet & mobile */
+  @include respond-md {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+
+.content {
+  flex: 1;
+
+  h1 {
+    font-size: $font-size-xl;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: $space-sm;
+    color: $color-text-primary;
+  }
+
+  p {
+    font-size: $font-size-md;
+    margin-bottom: $space-md;
+    color: $color-text-secondary;
+  }
+}
+
+.cta {
+  font-size: $font-size-md;
+  font-weight: $font-weight-bold;
+  padding: 0.875rem 2rem;
+  border-radius: 0.5rem;
+  color :$color-primary;
+  border:3px solid $color-primary;
+  background-color: #fff;
+  cursor: pointer;
+
+  &:hover {
+    color: #fff;
+    background-color: $color-primary;
+  }
+}
+
+.imageWrapper {
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+
+
+  .titleDark {
+  font-size: 3rem; // 48px
+  font-weight: 700;
+  color: #354e57;
+}
+
+.titleGreen {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #87c241;
+}
+
+  // Arka plandaki daire
+  &::before {
+    content: "";
+    position: absolute;
+    width: 34rem;
+    height: 34rem;
+    background-color: #f5f5f5;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  img {
+    position: relative;
+    z-index: 2;
+    max-width: 100%;
+    height: auto;
+  }
+
+  @include respond-md {
+    &::before {
+      width: 35rem;
+      height: 35rem;
+    }
+  }
+}

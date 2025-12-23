@@ -1,0 +1,65 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.footer {
+  background-color: #f9fafb;
+  border-top: 1px solid #e5e7eb;
+  margin-top: $space-lg;
+}
+
+.container {
+  @include container;
+  padding: $space-lg 0;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: $space-md;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: $space-xs;
+  font-size: $font-size-md;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+}
+
+.nav {
+  display: flex;
+  gap: $space-md;
+
+  a {
+    font-size: $font-size-sm;
+    color: $color-text-secondary;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}
+
+.bottom {
+  text-align: center;
+  font-size: $font-size-xs;
+  color: $color-text-secondary;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@include respond-sm {
+  .top {
+    flex-direction: column;
+    gap: $space-sm;
+  }
+
+  .nav {
+    gap: $space-sm;
+  }
+}

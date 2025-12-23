@@ -1,0 +1,90 @@
+@use "@/styles/variables" as *;
+
+.wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.label {
+  font-size: $font-size-md;
+  font-weight: $font-weight-bold;
+  margin-bottom: $space-xxs;
+  display: block;
+  color: $color-text-primary;
+}
+
+.control {
+  height: 48px;
+  width: 100%;
+  padding: 0 $space-xs;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  background: white;
+  cursor: pointer;
+}
+
+.control[aria-expanded="true"] .arrow {
+  transform: rotate(180deg);
+}
+
+.value {
+  display: flex;
+  align-items: center;
+  gap: $space-xs;
+  font-size: $font-size-sm;
+  color: $color-text-primary;
+  font-weight: $font-weight-semi-bold;
+  font-family: var(--font-inter);
+}
+
+.arrow {
+  width: 12px;
+  height: 8px;
+  position: relative;
+}
+
+.arrow::before,
+.arrow::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 2px;
+  background-color: #000;
+  top: 3px;
+}
+
+.arrow::before {
+  transform: rotate(45deg);
+  left: 0;
+}
+
+.arrow::after {
+  transform: rotate(-45deg);
+  right: 0;
+}
+
+.list {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  width: 100%;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  z-index: 10;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: $space-xs;
+  padding: $space-xs;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #f3f4f6;
+  }
+}

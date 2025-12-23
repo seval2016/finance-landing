@@ -1,0 +1,52 @@
+/* =========================
+   COLORS
+========================= */
+
+$color-primary: #87C241;      // ana yeşil
+$color-primary-dark: #63A022; // hover / accent
+
+$color-text-primary: #354E57; // ana yazı
+$color-text-secondary: #848F93;
+
+$color-bg-light: #EEF3F4;     // page background
+$color-bg-soft: #DFEDCF;      // section / card bg
+
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+
+$font-family-base: "Inter", sans-serif;
+
+/* Font sizes */
+$font-size-xs: 14px; // small labels, login, helper
+$font-size-sm: 16px; // body - Inter Regular
+$font-size-md: 20px; // section text - Inter Medium
+$font-size-lg: 28px; // section title - Inter Bold
+$font-size-xl: 48px; // hero title - Inter Bold
+
+/* Font weights */
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semi-bold: 600;
+$font-weight-bold: 700;
+
+
+/* =========================
+   LAYOUT
+========================= */
+
+$container-max-width: 1200px;
+$container-padding: 16px;
+
+
+/* =========================
+   SPACING
+========================= */
+
+$space-xxs: 0.5rem;  // 8px
+$space-xs: 1rem;    // 16px
+$space-sm: 1.5rem;  // 24px
+$space-md: 2.5rem;  // 40px
+$space-lg: 5rem;    // 80px
+

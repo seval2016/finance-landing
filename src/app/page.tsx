@@ -1,7 +1,13 @@
-export default function HomePage() {
+import Hero from "@/sections/Hero/Hero";
+import Features from "@/sections/Features/Features";
+import Convert from "@/sections/Convert/Convert";
+
+export default function Home() {
   return (
-    <main>
-      <h1>Finance Landing Page</h1>
-    </main>
+    <>
+      <Hero />
+      <Features />
+      <Convert />
+    </>
   );
 }

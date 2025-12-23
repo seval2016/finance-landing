@@ -1,0 +1,37 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.header {
+  width: 100%;
+    padding-top: $space-lg;
+}
+
+.container {
+  @include container;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.login {
+  font-size: 14px;
+  font-weight: 500;
+  color: $color-text-primary;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+
+  &:hover {
+    color: $color-primary;
+  }
+}

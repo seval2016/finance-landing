@@ -1,0 +1,36 @@
+@use "./variables" as *;
+@use "./breakpoints" as *;
+
+/* CENTER */
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* CONTAINER */
+@mixin container {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding-left: $container-padding;
+  padding-right: $container-padding;
+}
+
+/* RESPONSIVE – mobile first */
+@mixin respond-lg {
+  @media (max-width: $breakpoint-lg) {
+    @content;
+  }
+}
+
+@mixin respond-md {
+  @media (max-width: $breakpoint-md) {
+    @content;
+  }
+}
+
+@mixin respond-sm {
+  @media (max-width: $breakpoint-sm) {
+    @content;
+  }
+}

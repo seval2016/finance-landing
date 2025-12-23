@@ -1,8 +1,22 @@
-* {
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+@use "@/styles/breakpoints" as *;
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
+html,
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: var(--font-inter);
+  color: $font-size-sm;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
