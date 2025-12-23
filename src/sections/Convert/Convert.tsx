@@ -11,7 +11,6 @@ const BASE_URL = process.env.NEXT_PUBLIC_FREECURRENCY_BASE_URL!;
 const API_KEY = process.env.NEXT_PUBLIC_FREECURRENCY_API_KEY!;
 
 const Convert = () => {
-
   const [amount, setAmount] = useState(10);
   const [from, setFrom] = useState<Currency>(currencies[0]);
   const [to, setTo] = useState<Currency>(currencies[1]);
@@ -22,31 +21,38 @@ const Convert = () => {
   const calculate = async () => {
     if (!amount) return;
 
+    // Aynı para birimi seçilirse
+    if (from.code === to.code) {
+      setResult(amount);
+      setShowResult(true);
+      return;
+    }
+
     setLoading(true);
 
     try {
-      const res = await fetch(
-        `${BASE_URL}?apikey=${API_KEY}&base_currency=${from.code}&currencies=${to.code}`
-      );
-
+      const res = await fetch(`${BASE_URL}/latest?apikey=${API_KEY}`);
       const data = await res.json();
-      const rate = data?.data?.[to.code];
-     
 
-      if (!rate) return;
+      const rates = data?.data;
+      if (!rates?.[from.code] || !rates?.[to.code]) return;
 
-      setResult(amount * rate);
+      const converted = (amount / rates[from.code]) * rates[to.code];
+
+      setResult(converted);
       setShowResult(true);
     } catch (err) {
-      console.error(err);
+      console.error("Currency convert error:", err);
     } finally {
       setLoading(false);
     }
   };
 
   const swapCurrencies = () => {
-    setFrom(to);
-    setTo(from);
+    setFrom((prevFrom) => {
+      setTo(prevFrom);
+      return to;
+    });
     setShowResult(false);
   };
 
@@ -74,6 +80,8 @@ const Convert = () => {
             <label>Amount</label>
             <input
               type="number"
+              min={0}
+              step="0.01"
               value={amount}
               onChange={(e) => {
                 setAmount(Number(e.target.value));
@@ -86,13 +94,17 @@ const Convert = () => {
             label="From"
             value={from}
             options={currencies}
-            onChange={setFrom}
+            onChange={(currency) => {
+              setFrom(currency);
+              setShowResult(false);
+            }}
           />
 
           <button
             type="button"
             className={styles.swap}
             onClick={swapCurrencies}
+            aria-label="Swap currencies"
           >
             <Image
               src="/icons/exchance.svg"
@@ -106,10 +118,17 @@ const Convert = () => {
             label="To"
             value={to}
             options={currencies}
-            onChange={setTo}
+            onChange={(currency) => {
+              setTo(currency);
+              setShowResult(false);
+            }}
           />
 
-          <button type="submit" className={styles.submit}>
+          <button
+            type="submit"
+            className={styles.submit}
+            disabled={loading}
+          >
             {loading ? "Converting..." : "Convert"}
           </button>
         </form>

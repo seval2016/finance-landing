@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.scss";
-import { inter } from "./fonts";
 
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-
 
 export const metadata: Metadata = {
   title: "Finance Landing",
@@ -18,10 +16,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.variable}>
+      <body>
         <Header />
         {children}
-         <Footer />
+        <Footer />
       </body>
     </html>
   );

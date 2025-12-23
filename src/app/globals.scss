@@ -2,6 +2,46 @@
 @use "@/styles/mixins" as *;
 @use "@/styles/breakpoints" as *;
 
+/* =========================
+   Proxima Nova Fonts
+   ========================= */
+
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("/fonts/ProximaNova-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("/fonts/ProximaNova-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("/fonts/ProximaNova-Semibold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Proxima Nova";
+  src: url("/fonts/ProximaNova-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* =========================
+   Reset
+   ========================= */
+
 *,
 *::before,
 *::after {
@@ -12,7 +52,7 @@
 
 html,
 body {
-  font-family: var(--font-inter);
+  font-family: "Proxima Nova", system-ui, -apple-system, sans-serif;
   color: $font-size-sm;
 }
 

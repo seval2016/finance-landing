@@ -14,12 +14,11 @@ const Header = () => {
       <header className={styles.header}>
         <div className={styles.headerContainer}>
           {/* LOGO */}
-          <div className={styles.logo}>
+          <div className={styles.headerLogo}>
             <Image
               src="/logos/logo.svg"
               alt="EasyExchange Logo"
-              width={280}
-              height={80}
+              fill
               priority
             />
           </div>

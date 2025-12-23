@@ -3,7 +3,7 @@
 
 /* ROOT */
 .hero {
-  padding: $space-lg 0;
+  padding: $space-sm $space-sm $space-lg;
 
   @include respond-md {
     padding: $space-md 0;
