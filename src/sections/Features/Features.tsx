@@ -12,7 +12,7 @@ const Features = () => {
         />
 
         <FeatureCard
-          icon="/icons/ACCESSIBLE.svg"
+          icon="/icons/accessible.svg"
           title="EASY ACCESSIBLE"
           description="Create a chart for any currency pair in the world to see their currency history. These currency charts use live mid-market rates, are easy to use, and are very reliable."
         />
