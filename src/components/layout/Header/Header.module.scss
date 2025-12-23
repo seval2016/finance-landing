@@ -20,24 +20,42 @@
   @include respond-md {
     height: 64px;
   }
+
+  @include respond-sm {
+    height: 56px;
+  }
 }
 
 .headerLogo {
-   position: relative;
-  width: 300px;
-  height: 100px;
+  position: relative;
   display: flex;
   align-items: center;
+
+  // Desktop
+  width: 300px;
+  height: 100px;
 
   img {
     width: 280px;
     height: auto;
+  }
 
-    @include respond-md {
+  // Tablet
+  @include respond-md {
+    width: 220px;
+    height: 72px;
+
+    img {
       width: 200px;
     }
+  }
 
-    @include respond-sm {
+  // Mobile
+  @include respond-sm {
+    width: 180px;
+    height: 56px;
+
+    img {
       width: 160px;
     }
   }
